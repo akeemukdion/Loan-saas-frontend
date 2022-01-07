@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from "react";
-import { Route, Routes, useHistory, useNavigate, useNavigationType } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import NavBar from "../dashboard/components/Navigationbar/index";
 import CreateLoanForm from "../dashboard/modules/CreateLoanForm";
-import LoginForm from "../Login";
 // import LoginForm from "../Login";
 import SideBarNav from "./components/sidebar";
 import styles from "./style.module.css";
