@@ -1,0 +1,10 @@
+/* 
+******************* User Avatar ****************
+*/
+
+.userAvatar{
+    border-radius: 2.25rem;
+    border: 2px solid rgb(63, 61, 61);
+    width: 55px;
+    cursor: pointer;
+}
