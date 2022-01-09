@@ -1,22 +1,22 @@
-.layout{
-    display: flex;
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #f1f9fa44;
+.layout {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f1f9fa44;
 }
- .layout .main{
-    flex: 1;
-    margin-left: 250px;
- 
-    /* margin-bottom: 30px; */
+.layout .main {
+  flex: 1;
+  /* margin-left: 250px; */
+
+  /* margin-bottom: 30px; */
 }
-.viewPoint{
-    padding:20px 5px 0 50px;
-    font-weight: 500;
-    font-size: 16px;
+.viewPoint {
+  padding: 20px 5px 0 50px;
+  font-weight: 500;
+  font-size: 16px;
 }
 
-.mainView{
-    padding: 50px;
+.mainView {
+  padding: 50px;
 }

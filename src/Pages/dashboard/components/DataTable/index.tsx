@@ -7,30 +7,38 @@ const DataTable = () => {
   <TableWrapper>
       <thead>
       <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Points</th>
+      <th>Customer Name</th>
+      <th>Loan</th>
+      <th>Amount</th>
+      <th>Branch</th>
+      <th>Status</th>
     
     </tr>
       </thead>
     <tbody>
 
     <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
+      <td>James Bond</td>
+      <td>Federal</td>
+      <td>500000</td>
+      <td>Ikeja</td>
+      <td>waiting</td>
      
     </tr>
     <tr>
       <td>Eve</td>
       <td>Jackson</td>
-      <td>94</td>
+      <td>94000</td>
+      <td>Lekki</td>
+      <td>approved</td>
       
     </tr>
     <tr>
       <td>Adam</td>
       <td>Johnson</td>
-      <td>67</td>
+      <td>60000</td>
+      <td>PH</td>
+      <td>60000</td>
      
     </tr>
     </tbody>

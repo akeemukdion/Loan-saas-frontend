@@ -20,7 +20,7 @@ type Loginstate = {
 //   //   pattern:"^[A-Za-z0-9]{}"
 // }
 
-const LoginForm = () => {
+const LoginForm: () => JSX.Element = () => {
   const [userData, setUserData] = useState<Loginstate>({
     email: "",
     password: "",
@@ -60,7 +60,7 @@ const LoginForm = () => {
     e.preventDefault();
     // console.log(userData);
     if (userData.email && userData.password) {
-      navigate("/dashboard");
+      navigate("/dashboard/overview");
     } else {
       setError({ message: "Invalid Details" });
     }
@@ -96,7 +96,7 @@ const LoginForm = () => {
         <div className="Forgotpassword">
           <Link to="/#">Forgot Password</Link>
         </div>
-        <LoginButton onClick={onSubmitHandler} type="submit">
+        <LoginButton colored onClick={onSubmitHandler} type="submit">
           login
         </LoginButton>
         {/* {JSON.stringify(userData)} */}

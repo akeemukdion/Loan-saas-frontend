@@ -1,45 +1,45 @@
 export const Data = [
 	{
-		route: '/dashboard',
+		route: '/dashboard/overview',
 		iconName: "fa fa-dashboard",
 		title: 'dashboard',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/create-loan',
 		iconName: 'fa fa-book',
 		title: 'create loan',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/loan-status',
 		iconName: 'fa  fa-cubes',
 		title: 'loan status',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/loan-request',
 		iconName: 'fa fa-feed',
 		title: 'Loan request',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/offer-letter',
 		iconName: 'fa fa-diamond',
 		title: 'Send Offer letter',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/declined-loan',
 		iconName: 'fa fa-thumbs-down',
 		title: 'declined loan',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	{
 		route: '/dashboard/all-loan',
 		iconName: 'fa fa-folder-open-o ',
 		title: 'All loan status',
-		classNames: '/dashboards',
+		// classNames: '/dashboards',
 	},
 	// {
 	// 	route: '/dashboard/loan-request',

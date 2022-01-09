@@ -1,11 +1,17 @@
-.sidebarContainer {
-  position: fixed;
+import styled from "styled-components";
+
+
+export const Wrapper = styled.aside`
+  transform: translateX(0%);
   top: 0;
   left: 0;
   height: 100vh;
   width: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: transform 300ms ease-in-out;
   background-color: #e5e6e9d3;
-}
+
 .sideLogo{
     display: flex;
     justify-content: center;
@@ -16,10 +22,20 @@
     /* border: 1px solid; */
     /* background-color: white; */
 }
+
+@media screen and (max-width: 768px) {
+  transform: translateX(-100%);
+  position: fixed;
+
+}
+
+`
+export const ItemWrapper =styled.nav`
 .menuItem {
-  padding: 15px 5px;
+  padding: 25px 5px;
   padding-left: 15px;
-  width: 100%;
+  text-align: center;
+  /* width: 100%; */
   display: flex;
   text-transform: capitalize;
   white-space: nowrap;
@@ -33,10 +49,13 @@
 /* .subMenuItem{
     display: block; 
 } */
-
+ 
 .menuItem i {
   padding: 0 12px;
 }
-.menuItem:hover {
-  background-color: #fff;
+.menuItem:hover, .menuItem.active{
+  background-color: #e6f7ff;
+  border-right: 4px solid #333 ;
+  
 }
+`

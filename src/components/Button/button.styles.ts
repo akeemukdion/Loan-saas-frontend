@@ -1,37 +1,43 @@
 import styled from "styled-components";
-
-export const ButtonWrapper = styled.button`
+type SizeProps ={
+  xs?: boolean;
+  colored?:boolean
+  small?: boolean;
+};
+export const ButtonWrapper = styled.button<SizeProps>`
 
    transition: 0.5s;
      background-size: 200% auto;
      box-shadow: 0 0 20px #eee;
-    min-width: 150px;
-    width: 100%;
-    height: 46px;
+    /* min-width: 10px; */
+    width:${(props)=> props.xs ? "auto" : props.small ? "100px" : "100%" }; 
+    height: ${(props)=> props.xs ? "auto" : props.small ? "auto" : "46px" };
     letter-spacing: 0.03em;
     line-height: 23px;
-    padding: 0 25px 0 25px;
+    padding:${(props)=> props.xs ? "0 12px 0 12px;" : props.small ? "5px 12px 5px 12px;" : "0 25px 0 25px;" }; 
     overflow: hidden;
     font-family: var(--general-font);
     font-weight: 500;
-    font-size: 17px;
-    /* background-color: var(--primary-btn-color); */
+    font-size: ${(props)=> props.xs ? "10px" : props.small ? "inherit" : "17px" };
+    background-color:${(props)=> props.xs && !props.colored ?"#fff": props.small && !props.colored && "#fff"};
     display: inline-block;
-    color: #ffffff;
+    color: ${(props)=> props.xs ? "black" : props.small ? "black" : "#ffffff" }; 
     text-transform: capitalize;
-    border: none;
+    border: ${(props)=> props.xs ? "1px solid green" : props.small ? "1px solid green" : "none" };;
     border-radius: 8px;
     cursor: pointer;
     -moz-appearance: none;
     -webkit-appearance: none;
-    background-image: linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%);
-  
+    background-image:${(props)=> props.colored && ("linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)")};
+    border-image:linear-gradient(135deg,#449f39 10%,RGB(227,177,23,0.9)50%, #ff00a8 70%)1;
   
   &:hover {
-    background-color: var(--title-text-color);
+    /* background-color: var(--title-text-color); */
     border: 1px solid var(--mainWhite);
     background-position: right center; /* change the direction of the change here */
-    color: #ccc;
+    color: #ddd;
+    background-image:${(props)=> props.xs ? ("linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)") 
+    : props.small && ("linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)")};
   }
   &:focus {
     outline: none;

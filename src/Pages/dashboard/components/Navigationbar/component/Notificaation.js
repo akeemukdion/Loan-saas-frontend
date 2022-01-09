@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 const Notification = () => {
   return (
     <div>
-      <i className={`${styles.Notification} fa fa-bell`}></i>
+      <i className={`${styles.notification} fa fa-bell`}></i>
     </div>
   );
 };

@@ -1,21 +1,21 @@
 import { Badge, CardWrapper,CardItem } from "./card.style"
 
-type loanItem ={
-    name:string;
+type loanItemProps ={
+    item: {name:string;
     statusBadge:string;
     loanType:string;
     amount:number;
     branch:string;
     createdBy:string;
     createdDate:any;
-
-
-}
-type Props ={
-    item:loanItem
 }
 
-const DetailCard:React.FC<Props>= ({item}) => {
+}
+// type Props ={
+//     item:loanItem
+// }
+
+const DetailCard:React.FC<loanItemProps>= ({item}) => {
     return (
         <CardWrapper>
             <div>

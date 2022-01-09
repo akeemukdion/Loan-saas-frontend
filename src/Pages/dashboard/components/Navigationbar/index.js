@@ -1,20 +1,21 @@
 import React from 'react'
 import UserAvatar from './component/UserAvatar'
 import userAvatar from '../../../../assets/avatar.png'
-import styles from './style.module.css'
 import FormInput from '../../../../components/FormInput/index'
+import { NavWrapper } from './navbar.style'
 const index = ({subNav}) => {
     return (
-        <nav className={styles.Navcontainer} >
-           <div className={styles.navItems}>
-               <div className={styles.navSearch}>
+        <NavWrapper className="Navcontainer">
+            <span className='toggleIcon_onMobile'>&#9776;</span>
+           <div className="navItems">
+               <div className="navSearch">
                    <FormInput type="search" placeholder="search here" bordercolor />
                </div>
-               <div className={styles.navItemGroup}><i className='fa fa-bell' styles={{fontSize:"22px",color:"red",cursor:"pointer"}}/>
+               <div className="navItemGroup"><i className='fa fa-bell' />
                <UserAvatar userDetails={userAvatar}/>
                </div>
            </div>
-        </nav>
+        </NavWrapper>
     )
 }
 

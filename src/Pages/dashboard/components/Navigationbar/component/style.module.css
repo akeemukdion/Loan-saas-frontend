@@ -2,9 +2,15 @@
 ******************* User Avatar ****************
 */
 
-.userAvatar{
-    border-radius: 2.25rem;
-    border: 2px solid rgb(63, 61, 61);
-    width: 55px;
-    cursor: pointer;
+.userAvatar {
+  border-radius: 2.25rem;
+  border: 2px solid rgb(63, 61, 61);
+  width: 55px;
+  cursor: pointer;
 }
+
+/* .notification {
+  background-color: #efefef;
+  border: 1px solid red;
+  color: "red";
+} */

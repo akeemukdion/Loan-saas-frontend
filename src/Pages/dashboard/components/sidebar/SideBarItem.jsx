@@ -1,28 +1,18 @@
 import React from 'react'
 import {NavLink } from 'react-router-dom'
-import styles from './style.module.css'
-const SideBarItem = ({subNav,data}) => {
+import { ItemWrapper } from './sidebarItem.styles'
+const SideBarItem = ({iconName,data}) => {
     return (
-        <div className={styles.menuGrp} >
+        <ItemWrapper>
            <ul >
-              <NavLink to={data.route}  style={({ isActive }) =>console.log(isActive)} >
-              <li className={styles.menuItem}>
-           <i className={data.iconName}></i> 
+              <li >
+              <NavLink to={data.route} className="menuItem">
+           <i className={iconName}></i> 
            <p>{data.title}</p>
-           <ul>
-
-           {/* {data.subNav && data.subNav.map(submenu=><li className={styles.subMenuItem} key={submenu.title} >
-               <li>
-
-           <i className={submenu.iconName}></i> 
-           <p>{submenu.title}</p>
-               </li>
-           </li> )} */}
-           </ul>
-               </li>
               </NavLink>
+               </li>
             </ul>  
-        </div>
+        </ItemWrapper>
     )
 }
 

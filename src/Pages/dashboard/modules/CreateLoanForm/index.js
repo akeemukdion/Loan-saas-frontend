@@ -5,7 +5,7 @@ import { createLoanInput, nextOfKinInfo, workInformation } from "./InputFieldDat
 import FormInput from "../../../../components/FormInput/index";
 import SelectInput from "../../../../components/SelectInput";
 import UploadInput from "../../../../components/FileUpload";
-import UploadBTN from '../../../../components/Button'
+import CreateBTN from '../../../../components/Button'
 import { Wrapper } from "./create.style";
 
 const CreateLoan = (props) => {
@@ -82,9 +82,9 @@ const CreateLoan = (props) => {
         </fieldset>
         </section>
         <div className="createBTN" >
-          <UploadBTN onClick={()=>"clicked"} style={{width:"200px"}} >
+          <CreateBTN colored onClick={()=>"clicked"} style={{width:"200px"}} >
                 create
-            </UploadBTN>
+            </CreateBTN>
         </div>
       </form>
     </Wrapper>
