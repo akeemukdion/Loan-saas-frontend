@@ -11,14 +11,14 @@ export const Data = [
 		title: 'create loan',
 		// classNames: '/dashboards',
 	},
+	// {
+	// 	route: '/dashboard/loan-status',
+	// 	iconName: 'fa  fa-cubes',
+	// 	title: 'loan status',
+	// 	// classNames: '/dashboards',
+	// },
 	{
-		route: '/dashboard/loan-status',
-		iconName: 'fa  fa-cubes',
-		title: 'loan status',
-		// classNames: '/dashboards',
-	},
-	{
-		route: '/dashboard/loan-request',
+		route: '/dashboard/DeclinedLoans',
 		iconName: 'fa fa-feed',
 		title: 'Loan request',
 		// classNames: '/dashboards',
@@ -29,18 +29,18 @@ export const Data = [
 		title: 'Send Offer letter',
 		// classNames: '/dashboards',
 	},
-	{
-		route: '/dashboard/declined-loan',
-		iconName: 'fa fa-thumbs-down',
-		title: 'declined loan',
-		// classNames: '/dashboards',
-	},
-	{
-		route: '/dashboard/all-loan',
-		iconName: 'fa fa-folder-open-o ',
-		title: 'All loan status',
-		// classNames: '/dashboards',
-	},
+	// {
+	// 	route: '/dashboard/declined-loan',
+	// 	iconName: 'fa fa-thumbs-down',
+	// 	title: 'declined loan',
+	// 	// classNames: '/dashboards',
+	// },
+	// {
+	// 	route: '/dashboard/all-loan',
+	// 	iconName: 'fa fa-folder-open-o ',
+	// 	title: 'All loan status',
+	// 	// classNames: '/dashboards',
+	// },
 	// {
 	// 	route: '/dashboard/loan-request',
 	// 	iconName: 'login-fa fa fa-home',

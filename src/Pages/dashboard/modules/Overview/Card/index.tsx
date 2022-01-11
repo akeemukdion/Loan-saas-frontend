@@ -4,9 +4,8 @@ import * as Styled from "./overview_card.style";
 type Loanprops = {
   item: {
     title: string;
-    product?: string;
-    total_Amount: string;
-    totalNumber?: number;
+    status?: string;
+    totalNumber?: string;
   };
 };
 
@@ -14,7 +13,7 @@ const OverviewCard: React.FC<Loanprops> = ({ item }) => {
   return (
     <Styled.Wrapper>
       <Styled.Title>{item.title}</Styled.Title>
-      <Styled.AmountWrapper product={item.product}>
+      <Styled.TotalNumber status={item.status}>
         <p className="icon_holder">
           {" "}
           {item.totalNumber ? (
@@ -24,14 +23,13 @@ const OverviewCard: React.FC<Loanprops> = ({ item }) => {
             <i className="fa fa-graph">&#xf200;</i>
           )}
         </p>
-        <h4>{item.total_Amount}</h4>
-      </Styled.AmountWrapper>
-      {item.product && (
+        <h4>{item.totalNumber}</h4>
+      </Styled.TotalNumber>
+      {/* {item.status && (
         <ViewDetailsBTN xs onClick={() => "were"}>
           Details
         </ViewDetailsBTN>
-      )}
-      <div>{}</div>
+      )} */}
     </Styled.Wrapper>
   );
 };

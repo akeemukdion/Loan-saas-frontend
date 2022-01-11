@@ -1,6 +1,6 @@
 
 type InputItem = {
-  id: number;
+  // id: string;
   name: string;
   type: string;
   placeholder?: string;
@@ -13,7 +13,7 @@ type InputItem = {
   
 export const createLoanInput:InputItem[] = [
     {
-      id: 1,
+      // id: "1",
       name: "title",
       type: "text",
       placeholder: "Title",
@@ -24,7 +24,7 @@ export const createLoanInput:InputItem[] = [
       pattern: "^[A-Za-z0-9]{2,18}$",
     },
     {
-      id: 2,
+      // id: "2",
       name: "lastName",
       type: "text",
       placeholder: "surname name",
@@ -35,7 +35,7 @@ export const createLoanInput:InputItem[] = [
       pattern: "^[A-Za-z0-9]{3,18}$",
     },
     {
-      id:3,
+      // id:"3",
       name: "otherName",
       type: "text",
       placeholder: "other name",
@@ -46,7 +46,7 @@ export const createLoanInput:InputItem[] = [
       pattern: "^[A-Za-z0-9]{3,18}$",
     },
     {
-      id: 4,
+      // id: "4",
       name: "gender",
       type: "select",
     //   placeholder: "surname name",
@@ -58,7 +58,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: "^[A-Za-z0-9]{3,18}$",
     },
     {
-      id: 5,
+      // id: "5",
       name: "maritalStatus",
       type: "select",
     //   placeholder: "surname name",
@@ -70,7 +70,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: "^[A-Za-z0-9]{3,18}$",
     },
     {
-        id: 6,
+        // id: "6",
         name: "birthDate",
         type: "date",
         placeholder: "enter date",
@@ -79,7 +79,7 @@ export const createLoanInput:InputItem[] = [
         required: true,
       },
     {
-        id: 14,
+        // id: "14",
         name: "birthPlace",
         type: "text",
         placeholder: "enter place of birth",
@@ -88,7 +88,7 @@ export const createLoanInput:InputItem[] = [
         required: true,
       },
     {
-      id: 7,
+      // id: "7",
       name: "email",
       type: "email",
       placeholder: "enter email",
@@ -99,7 +99,7 @@ export const createLoanInput:InputItem[] = [
     },
    
     {
-      id: 8,
+      // id: "8",
       name: "BVN",
       type: "number",
       placeholder: "bank verification number",
@@ -109,7 +109,7 @@ export const createLoanInput:InputItem[] = [
       //   pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd@$£!%*#?&^_-]{8,20}$",
     },
     {
-      id: 9,
+      // id: "9",
       name: "phoneNumber",
       type: "number",
       placeholder: "enter  phone number",
@@ -119,7 +119,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: values.password,
     },
     {
-      id: 10,
+      // id: "10",
       name: "productType",
       type: "select",
       placeholder: "product type",
@@ -132,7 +132,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: values.password,
     },
     {
-      id: 11,
+      // id: "11",
       name: "loanOfficer",
       type: "select",
       placeholder: "Loan officer",
@@ -143,7 +143,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: values.password,
     },
     {
-      id: 12,
+      // id: "12",
       name: "nationality",
       type: "text",
       placeholder: "Nationality",
@@ -153,7 +153,7 @@ export const createLoanInput:InputItem[] = [
     //   pattern: values.password,
     },
     {
-      id: 13,
+      // id: "13",
       name: "address",
       type: "text",
       placeholder: "contact Address",
@@ -168,7 +168,7 @@ export const createLoanInput:InputItem[] = [
 
   export const nextOfKinInfo:InputItem[]= [
     {
-      id:1,
+      // id:"1",
       name: "next_of_kin",
       type: "text",
       placeholder: "Full Name",
@@ -176,7 +176,8 @@ export const createLoanInput:InputItem[] = [
       errorMessage: "Name required",
       required: true,
     },
-    {id: 2,
+    {
+      // id: "2",
       name: "relationship",
       type: "text",
       placeholder: "Relationship with kin",
@@ -185,7 +186,8 @@ export const createLoanInput:InputItem[] = [
       // required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id: 5,
+    {
+      // id: "5",
       name: "date_of_birth",
       type: "date",
       label: "Date of Birth",
@@ -193,7 +195,8 @@ export const createLoanInput:InputItem[] = [
       required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id: 6,
+    {
+      // id: "6",
       name: "next_of_kin_address",
       type: "text",
       placeholder: "Next of Kin address",
@@ -202,7 +205,8 @@ export const createLoanInput:InputItem[] = [
       required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id: 3,
+    {
+      // id: "7",
       name: "email",
       type: "email",
       placeholder: "enter email",
@@ -211,7 +215,8 @@ export const createLoanInput:InputItem[] = [
       required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id: 4,
+    {
+      // id: "4",
       name: "phone_number",
       type: "email",
       placeholder: "enter Phone number",
@@ -223,7 +228,7 @@ export const createLoanInput:InputItem[] = [
   ]
   export const workInformation:InputItem[] = [
     {
-      id:1,
+      // id:"1",
       name: "work_place",
       type: "text",
       placeholder: "company name",
@@ -231,7 +236,8 @@ export const createLoanInput:InputItem[] = [
       errorMessage: "field required",
       required: true,
     },
-    {id: 2,
+    {
+      // id: "2",
       name: "portfolio",
       type: "text",
       placeholder: "work position",
@@ -240,7 +246,8 @@ export const createLoanInput:InputItem[] = [
       // required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id: 3,
+    {
+      // id: "3",
       name: "work_address",
       type: "text",
       placeholder: "workplace address",
@@ -249,7 +256,8 @@ export const createLoanInput:InputItem[] = [
       // required: true,
       //   pattern:"^[A-Za-z0-9]{}"
     },
-    {id:4,
+    {
+      // id:"4",
       name: "work_address",
       type: "text",
       placeholder: "state",

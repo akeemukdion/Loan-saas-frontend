@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-
-export const Wrapper = styled.aside`
-  transform: translateX(0%);
+type SidebarOpenProps ={
+  showSideBar: boolean;
+}
+export const Wrapper = styled.aside<SidebarOpenProps>`
+  /* transform: translateX(0%); */
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -16,16 +19,17 @@ export const Wrapper = styled.aside`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 40px auto; */
-    /* border-radius: 4.5rem; */
     padding: 25px;
-    /* border: 1px solid; */
-    /* background-color: white; */
 }
 
 @media screen and (max-width: 768px) {
-  transform: translateX(-100%);
+  transform:${(props)=>!props.showSideBar ? "translateX(-100%)":"null"};
   position: fixed;
+display: ${(props)=>!props.showSideBar ? "none":"block"};
+z-index: 12;
+  /* .showSideBar{
+    display:  
+  } */
 
 }
 

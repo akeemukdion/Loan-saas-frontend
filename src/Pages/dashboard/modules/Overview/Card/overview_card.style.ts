@@ -1,6 +1,6 @@
 import styled from "styled-components";
 interface Iconprops {
-    product?:string;
+    status?:string;
 }
 export const Wrapper = styled.div`
 border: 1px solid #ccc;
@@ -9,10 +9,15 @@ border-radius: 4px;
 margin: 12px;
 /* text-align: center; */
 /* width: 300px; */
+cursor: pointer;
 padding: 20px;
 box-shadow: var(--lightShadow);
 
+&:hover{
+    /* border: 1px solid lightgray; */
+box-shadow : var(--darkShadow);
 
+}
 /* div:nth-child(1){
     padding: 4px;
     text-align: right;
@@ -24,16 +29,22 @@ padding: 8px 0;
 font-weight: bold;
 color: #7f8fa4;
 `
-export const AmountWrapper = styled.div<Iconprops>`
+export const TotalNumber = styled.div<Iconprops>`
 display: flex;
 justify-content: space-between;
 align-items: center;
+h4{
+    font-size: 28px;
+    font-weight: 500;
+    color: ${(props)=> props.status ==="awaiting"? "lightblue" : 
+props.status === "processed"? "lightgreen" : props.status === "rejected" ? "red" : "burlywood"};
 
+}
 .icon_holder{
-color: ${(props)=> props.product ==="DEFF"? "lightblue" : 
-props.product === "Federal"? "lightgreen" : props.product === "UK-dion staff" ? "lightsalmon" : "null"};
-/* font-size: ${(props)=> !props.product?" 23px" :  "22px" }; */
-color: ${(props)=> !props.product && "limegreen" };
+color: ${(props)=> props.status ==="awaiting"? "lightblue" : 
+props.status === "processed"? "lightgreen" : props.status === "rejected" ? "red" : "lightsalmon"};
+/* font-size: ${(props)=> !props.status?" 23px" :  "22px" }; */
+/* color: ${(props)=> !props.status && "limegreen" }; */
 
 
     padding: 4px;

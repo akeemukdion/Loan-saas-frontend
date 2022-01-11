@@ -14,4 +14,8 @@ export const Container=styled.div`
     justify-items: stretch;
     align-items: stretch;
 /* font-weight: bold; */
+
+@media screen and (max-width:480px) {
+    grid-template-columns:auto ;
+}
 `

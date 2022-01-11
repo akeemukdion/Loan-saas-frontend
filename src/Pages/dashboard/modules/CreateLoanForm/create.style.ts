@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 
  @media screen and (max-width: 480px) {
     fieldset{
-        padding: 25px;
+        padding: 10px;
         margin-top: 20px;
         legend{
             padding: 4px;

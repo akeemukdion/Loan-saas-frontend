@@ -29,7 +29,7 @@ const LoginForm: () => JSX.Element = () => {
   let navigate = useNavigate();
   const inputsArray = [
     {
-      id: 2,
+      // id: 2,
       name: "email",
       type: "email",
       placeholder: "Enter email",
@@ -39,7 +39,7 @@ const LoginForm: () => JSX.Element = () => {
       //   pattern:"^[A-Za-z0-9]{}"
     },
     {
-      id: 3,
+      // id: 3,
       name: "password",
       type: "password",
       placeholder: "Enter Password",
@@ -77,12 +77,11 @@ const LoginForm: () => JSX.Element = () => {
             height=""
           />
         </div>
-        {inputsArray.map((input) => (
-          <div className="inputfield" key={input.id}>
+        {inputsArray.map((input, index) => (
+          <div className="inputfield" key={index}>
             <FormInput
               {...input}
               placeholder={input.placeholder}
-              bordercolor
               // value={userData["email"]}
               onChange={handleFormChange}
             />

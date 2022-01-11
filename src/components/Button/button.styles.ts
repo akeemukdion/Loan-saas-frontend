@@ -23,13 +23,13 @@ export const ButtonWrapper = styled.button<SizeProps>`
     display: inline-block;
     color: ${(props)=> props.xs ? "black" : props.small ? "black" : "#ffffff" }; 
     text-transform: capitalize;
-    border: ${(props)=> props.xs ? "1px solid green" : props.small ? "1px solid green" : "none" };;
+    border: ${(props)=> !props.colored ? "1px solid green" : "none"};
     border-radius: 8px;
     cursor: pointer;
     -moz-appearance: none;
     -webkit-appearance: none;
     background-image:${(props)=> props.colored && ("linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)")};
-    border-image:linear-gradient(135deg,#449f39 10%,RGB(227,177,23,0.9)50%, #ff00a8 70%)1;
+    border-image:${(props)=> !props.colored && ("linear-gradient(135deg,#449f39 10%,RGB(227,177,23,0.9)50%, #ff00a8 70%)1")};
   
   &:hover {
     /* background-color: var(--title-text-color); */

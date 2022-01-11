@@ -1,50 +1,45 @@
-import React from 'react'
-import { TableWrapper } from './table.style'
+import React from "react";
+import { customerDetails } from "./DummyInfo";
+import * as Style from "./table.style";
+import ActionBTN from "../../../../components/Button/index";
 
 const DataTable = () => {
-    return (
-            <div>
-  <TableWrapper>
-      <thead>
-      <tr>
-      <th>Customer Name</th>
-      <th>Loan</th>
-      <th>Amount</th>
-      <th>Branch</th>
-      <th>Status</th>
-    
-    </tr>
-      </thead>
-    <tbody>
+  return (
+    <div>
+      <Style.TableWrapper>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Customer Name</th>
+            <th>Loan</th>
+            <th>Amount</th>
+            <th>Branch</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {customerDetails.map((customer, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{customer.name}</td>
+              <td>{customer.product}</td>
+              <td>&#8358; {customer.amount}</td>
+              <td>{customer.branch}</td>
+              <td>
+                <Style.Status status={customer.status}>
+                  {customer.status}
+                </Style.Status>
+              </td>
+              <td>
+                <ActionBTN small> View</ActionBTN>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Style.TableWrapper>
+    </div>
+  );
+};
 
-    <tr>
-      <td>James Bond</td>
-      <td>Federal</td>
-      <td>500000</td>
-      <td>Ikeja</td>
-      <td>waiting</td>
-     
-    </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94000</td>
-      <td>Lekki</td>
-      <td>approved</td>
-      
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>60000</td>
-      <td>PH</td>
-      <td>60000</td>
-     
-    </tr>
-    </tbody>
-  </TableWrapper>
-</div>
-    )
-}
-
-export default DataTable
+export default DataTable;

@@ -2,11 +2,17 @@ import { Data } from "./MenuItemData";
 import logo from "../../../../assets/logo.png";
 import SideBarItem from "./SideBarItem";
 import { Wrapper } from "./sidebarItem.styles";
-const SideBarNav = () => {
-  // console.log(Data);
+
+type Props = {
+  isOpen: boolean;
+};
+
+const SideBarNav: React.FC<Props> = ({ isOpen }) => {
+  console.log(isOpen);
   return (
-    <Wrapper>
-      <div>
+    <Wrapper showSideBar={isOpen}>
+      <div style={{ position: "relative" }}>
+        {/* <span>X</span> */}
         <div className="sideLogo">
           <img src={logo} alt="business loan" width="80px" height="" />
         </div>

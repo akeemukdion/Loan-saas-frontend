@@ -3,10 +3,10 @@ import UserAvatar from './component/UserAvatar'
 import userAvatar from '../../../../assets/avatar.png'
 import FormInput from '../../../../components/FormInput/index'
 import { NavWrapper } from './navbar.style'
-const index = ({subNav}) => {
+const index = ({toggleOnClick}) => {
     return (
         <NavWrapper className="Navcontainer">
-            <span className='toggleIcon_onMobile'>&#9776;</span>
+            <span onClick={toggleOnClick} className='toggleIcon_onMobile'>&#9776;</span>
            <div className="navItems">
                <div className="navSearch">
                    <FormInput type="search" placeholder="search here" bordercolor />

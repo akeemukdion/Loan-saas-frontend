@@ -1,31 +1,45 @@
 export const getLoansOverview = [
   {
-    title: "Total loan Disbursed",
-    total_Amount: "632,300,000",
+    title: "All loans ",
+    totalNumber: "33",
   },
   {
-    title: "Running DEFF loan",
-    product: "DEFF",
-    total_Amount: "3,000,000",
-    totalNumber: 22,
+    title: "Loans on Queue 1",
+    totalNumber: "22",
   },
   {
-    title: "Running Federal loan",
-    total_Amount: "61,000,000",
-    product: "Federal",
-    totalNumber: 32,
+    title: "Loans on Queue 2",
+    totalNumber: "32",
   },
   {
-    title: "Running UK_dion staff loan",
-    total_Amount: "32,902,000",
-    product: "UK-dion staff",
-    totalNumber: 12,
+    title: "Loans Awaiting Approval ",
+    status: "awaiting",
+    totalNumber: "12",
   },
   {
-    title: "Total Re-Paid Amount",
-    total_Amount: "852,320,000",
+    title: "Processed Loans",
+    status: "processed",
+    totalNumber: "22",
+  },
+  {
+    title: "Declined Loans",
+    status: "rejected",
+    totalNumber: "8",
   },
   // { title:"Total Re-Paid Amount",
   //     total_Amount:"323,760,000",
   //         totalNumber:12},
 ];
+
+// type loanItem = {
+//   id: number;
+//   name: string;
+//   type: string;
+//   placeholder?: string;
+//   label: string;
+//   errorMessage: string;
+//   required?: boolean;
+//   pattern?: string;
+//   options?: string[];
+// };
+// export const loanDetails = {};
