@@ -62,6 +62,11 @@ ul {
   margin: 0;
 }
 
+.size-lg{
+  font-size: 20px;
+  color: var(--Text-Body-color)
+}
+
 .three-column-grid,.two-column-grid{
   display: grid;
     grid-template-columns: 1fr ;
@@ -88,5 +93,9 @@ ul {
         justify-items: stretch;
         align-items: start;
      }
+     .size-lg{
+      font-size: 40px;
+      color: var(--Text-Body-color)
+    }
  }
 `

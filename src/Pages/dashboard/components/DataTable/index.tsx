@@ -2,6 +2,7 @@ import React from "react";
 import { customerDetails } from "./DummyInfo";
 import * as Style from "./table.style";
 import ActionBTN from "../../../../components/Button/index";
+import {NavLink } from 'react-router-dom'
 
 const DataTable = () => {
   return (
@@ -32,7 +33,9 @@ const DataTable = () => {
                 </Style.Status>
               </td>
               <td>
-                <ActionBTN small> View</ActionBTN>
+                <NavLink to ={`/dashboard/view-loan/${customer.name}`}>
+                   <ActionBTN small> View</ActionBTN>
+                </NavLink>
               </td>
             </tr>
           ))}

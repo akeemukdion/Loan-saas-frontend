@@ -11,6 +11,7 @@ const DashboardOverview = lazy(() => import("./modules/Overview"));
 const LoanStatus = lazy(() => import("./modules/LoanStatus"));
 const DeclinedLoan = lazy(() => import("./modules/DeclinedLoan"));
 const OfferLetter = lazy(() => import("./modules/OfferLetter/OfferLetter"));
+const ViewLoan = lazy(() => import("./modules/ViewLoan"));
 
 interface Props {
   userName?: string;
@@ -37,6 +38,7 @@ const Dashboard: React.FC<Props> = (props) => {
           <Suspense fallback={<p>Loading...</p>}>
             <Routes>
               <Route path="/create-loan" element={<CreateLoanForm />} />
+              <Route path="/view-loan/*" element={<ViewLoan />} />
               <Route path="/overview" element={<DashboardOverview />} />
               <Route path="/loan-status" element={<LoanStatus />} />
               <Route path="/overview/Allloans" element={<DataTable />} />
