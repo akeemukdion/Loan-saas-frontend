@@ -8,7 +8,7 @@ type Props = {
 };
 
 const SideBarNav: React.FC<Props> = ({ isOpen }) => {
-  console.log(isOpen);
+  // console.log(isOpen);
   return (
     <Wrapper showSideBar={isOpen}>
       <div style={{ position: "relative" }}>

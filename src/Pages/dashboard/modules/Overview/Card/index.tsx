@@ -1,5 +1,4 @@
 import React from "react";
-import ViewDetailsBTN from "../../../../../components/Button/index";
 import * as Styled from "./overview_card.style";
 type Loanprops = {
   item: {

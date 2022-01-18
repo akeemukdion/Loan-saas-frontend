@@ -4,6 +4,7 @@ import * as Style from "./input.style";
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
+  borderColor?: boolean;
   errorMessage?: string;
   focused?: string;
 }
@@ -11,9 +12,11 @@ const FormInput: React.FC<InputProps> = ({
   label,
   onChange,
   focused,
+  borderColor,
   errorMessage,
   ...otherProp
 }) => {
+  //eslint-disable-next-line
   const [onFocused, setFocused] = useState(false);
 
   const handleFocus = () => setFocused(true);
@@ -27,6 +30,7 @@ const FormInput: React.FC<InputProps> = ({
       <Style.Input
         onChange={onChange}
         onBlur={handleFocus}
+        borderColor={borderColor}
         onFocus={() => otherProp.name === "confirmPassword" && setFocused(true)}
         // onFocus={ Object.keys(Obj)[Object.keys(Obj).length-1  }
         {...otherProp}
