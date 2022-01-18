@@ -2,9 +2,9 @@ import axios from 'axios';
 import CustomHttpError from './CustomError';
 import {getCookie} from '../shared/authHelper';
 // eslint-disable-next-line 
-const cloud =  'https://fms-api.ukdion.com/';
+// const cloud =  'https://fms-api.ukdion.com/';
 
-const testServer= 'https://ukdion-sso.herokuapp.com/'
+const testServer= 'https://ves-backend.herokuapp.com/'
 
 // eslint-disable-next-line 
 const localUrl = 'http://localhost:8000/'

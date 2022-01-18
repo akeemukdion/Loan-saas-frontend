@@ -4,42 +4,39 @@ import {
   nextOfKinInfo,
   workInformation,
 } from "./InputFieldData";
+import Preloader from "../../../../components/Preloader/index";
 import FormInput from "../../../../components/FormInput/index";
 import SelectInput from "../../../../components/SelectInput";
 import UploadInput from "../../../../components/FileUpload";
 import CreateBTN from "../../../../components/Button";
-import { Wrapper } from "./create.style";
+import * as Style from "./create.style";
+import Swal from "sweetalert2";
 
 type Createloanstate = {};
 
 type Props = {};
 const CreateLoan: React.FC<Props> = (props) => {
-  const [userData, setUserData] = useState<Createloanstate>({
-    email: "",
-    password: "",
-  });
-  // const createLoanForm = ()=>{
-  //     inputField.map(item =>(
-  //         item.type === "select" ?
-  //      <SelectInput key={item.id} optItem={item} /> : <FormInput type={item.type} placeholder={item.placeholder} {...item} />
-  //     ))
-  // }
+  const [userData, setUserData] = useState<Createloanstate>({});
+  const [loading, setLoading] = useState(false);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
-    console.log(userData);
   };
-  const handleSelectChange = () => {};
-  // const onSubmitHandler = (
-  //   e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  // ) => {
-  //   e.preventDefault();
-  //   // console.log(userData);
-  // };
+
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      Swal.fire("Loan created!");
+      setLoading(false);
+    }, 1500);
+
+    // console.log(userData);
+  };
 
   return (
-    <Wrapper>
-      <form>
+    <Style.Wrapper>
+      <form onSubmit={(event) => onSubmitHandler(event)}>
         <fieldset>
           <legend>Application Form:</legend>
           <div className="three-column-grid">
@@ -47,8 +44,9 @@ const CreateLoan: React.FC<Props> = (props) => {
               item.type === "select" ? (
                 <SelectInput
                   key={index}
+                  name={item.name}
                   label={item.label}
-                  handleChange={handleSelectChange}
+                  handleChange={handleFormChange}
                   optItem={item.options}
                 />
               ) : (
@@ -61,7 +59,14 @@ const CreateLoan: React.FC<Props> = (props) => {
                 />
               )
             )}
-
+            {/* <input list="browsers" name="browser" id="browser" />
+            <datalist id="browsers">
+              <option value="Akeem" />
+              <option value="Ifeoluwa" />
+              <option value="Chrome" />
+              <option value="Opera" />
+              <option value="Safari" />
+            </datalist> */}
             {/* {createLoanForm} */}
           </div>
         </fieldset>
@@ -73,14 +78,16 @@ const CreateLoan: React.FC<Props> = (props) => {
                 item.type === "select" ? (
                   <SelectInput
                     key={index}
+                    name={item.name}
                     label={item.label}
-                    handleChange={handleSelectChange}
+                    handleChange={handleFormChange}
                     optItem={item.options}
                   />
                 ) : (
                   <FormInput
                     key={index}
                     // type={item.type}
+                    onChange={handleFormChange}
                     placeholder={item.placeholder}
                     {...item}
                   />
@@ -100,6 +107,7 @@ const CreateLoan: React.FC<Props> = (props) => {
               <FormInput
                 key={index}
                 // type={item.type}
+                onChange={handleFormChange}
                 placeholder={item.placeholder}
                 {...item}
               />
@@ -115,16 +123,12 @@ const CreateLoan: React.FC<Props> = (props) => {
           </fieldset>
         </section>
         <div className="createBTN">
-          <CreateBTN
-            colored
-            onClick={() => "clicked"}
-            style={{ width: "200px" }}
-          >
-            create
+          <CreateBTN colored style={{ width: "200px" }} disabled={loading}>
+            {loading ? <Preloader /> : "create"}
           </CreateBTN>
         </div>
       </form>
-    </Wrapper>
+    </Style.Wrapper>
   );
 };
 
