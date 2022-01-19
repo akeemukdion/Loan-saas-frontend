@@ -5,12 +5,12 @@ export const CardWrapper = styled.div`
 background-color: #fff;
 border-radius: 4px;
 margin: 12px;
-/* text-align: center; */
-/* width: 300px; */
+border: 1px solid lightgray;
+
+width: 350px;
 padding: 20px;
 box-shadow: var(--lightShadow);
 &:hover{
-    border: 1px solid lightgray;
 box-shadow : var(--darkShadow);
 
 }
@@ -27,7 +27,7 @@ interface BadgeProps {
   } 
 export const Badge = styled.span<BadgeProps>`
     border: 1px solid lightskyblue;
-    padding: 2px;
+    padding: 4px 8px;
     font-size: 12px;
     text-transform: capitalize;
     border-radius: 8px;
@@ -45,7 +45,7 @@ export const Badge = styled.span<BadgeProps>`
 
 `
 export const CardItem = styled.div`
-cursor: pointer;
+/* cursor: pointer; */
 p{
     padding: 4px 0;
 }
@@ -53,4 +53,14 @@ p:first-child > span{
     font-weight: 500;
     font-size: 16px;
 }
+`
+
+export const Details =styled.details`
+  border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 8px;
+    color: blueviolet;
+    p{
+        color: #333;
+    }
 `

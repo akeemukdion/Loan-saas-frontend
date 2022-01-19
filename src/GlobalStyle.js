@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   --mainGrey: #ececec;
   --mainTransition: all 0.3s linear;
   --lightShadow: 2px 4px 3px 0px rgba(209, 209, 239, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -73,7 +73,7 @@ ul {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     justify-items: stretch;
-    align-items: start; 
+    align-items: stretch; 
 }
 
 @media screen and (min-width: 768px) {
@@ -91,7 +91,7 @@ ul {
         grid-column-gap: 20px;
         grid-row-gap: 20px;
         justify-items: stretch;
-        align-items: start;
+        align-items: stretch;
      }
      .size-lg{
       font-size: 40px;
