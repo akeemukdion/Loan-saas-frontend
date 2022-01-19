@@ -119,7 +119,11 @@ const CreateLoan: React.FC<Props> = (props) => {
         <section>
           <fieldset>
             <legend>Upload Relevant Documents:</legend>
-            <UploadInput />
+            <div className="fileWrapper">
+              <UploadInput />
+              <UploadInput />
+              <UploadInput />
+            </div>
           </fieldset>
         </section>
         <div className="createBTN">

@@ -40,8 +40,8 @@ const Dashboard: React.FC<Props> = (props) => {
               <Route path="/overview" element={<DashboardOverview />} />
               <Route path="/loan-status" element={<LoanStatus />} />
               <Route path="/overview" element={<DashboardOverview />} />
-              <Route path="/overview/Allloans" element={<DataTable />} />
-              <Route path="/overview/LoansonQueue1" element={<DataTable />} />
+              <Route path="/overview/*" element={<DataTable />} />
+              {/* <Route path="/overview/LoansonQueue1" element={<DataTable />} />
               <Route path="/overview/LoansonQueue2" element={<DataTable />} />
               <Route
                 path="/overview/LoansAwaitingApproval"
@@ -51,7 +51,7 @@ const Dashboard: React.FC<Props> = (props) => {
               <Route
                 path="/overview/DeclinedLoans"
                 element={<DeclinedLoan />}
-              />
+              /> */}
               <Route path="/declinedrequest" element={<DeclinedLoan />} />
               <Route path="/offer-letter" element={<OfferLetter />} />
             </Routes>

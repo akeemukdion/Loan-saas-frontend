@@ -4,13 +4,25 @@ export const getLoansOverview = [
     totalNumber: "33",
   },
   {
-    title: "Loans on Queue 1",
+    title: "Risk Officer 1",
     totalNumber: "22",
   },
   {
-    title: "Loans on Queue 2",
+    title: "Risk Officer 2",
     totalNumber: "32",
   },
+  {
+    title: "Risk Officer 3",
+    totalNumber: "32",
+  },
+  {
+    title: "Ex-Checkers",
+    totalNumber: "12",
+  },
+  // {
+  //   title: "GMD",
+  //   totalNumber: "2",
+  // },
   {
     title: "Loans Awaiting Approval ",
     status: "awaiting",
@@ -22,13 +34,19 @@ export const getLoansOverview = [
     totalNumber: "22",
   },
   {
-    title: "Declined Loans",
+    title: "Rejected Loans",
     status: "rejected",
     totalNumber: "8",
   },
+  {
+    title: "Declined Loans",
+    status: "rejected",
+    totalNumber: "18",
+  },
   // { title:"Total Re-Paid Amount",
-  //     total_Amount:"323,760,000",
-  //         totalNumber:12},
+  //   total_Amount:"323,760,000",
+  //   totalNumber:12
+  // },
 ];
 
 // type loanItem = {

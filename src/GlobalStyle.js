@@ -1,7 +1,7 @@
-import  { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Avenir Next:wght@300;400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Avenir Next:wght@300;400;700&display=swap"); */
 
 /* Global Styles */
 :root {
@@ -64,7 +64,7 @@ ul {
 
 .size-lg{
   font-size: 20px;
-  color: var(--Text-Body-color)
+  color: var(--Text-Body-color);
 }
 
 .three-column-grid,.two-column-grid{
@@ -98,4 +98,4 @@ ul {
       color: var(--Text-Body-color)
     }
  }
-`
+`;
