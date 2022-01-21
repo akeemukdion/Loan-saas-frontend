@@ -115,7 +115,7 @@ const AcceptRejectDeclineAction: React.FC<Props> = () => {
       {userAccess.toString() === loanConfirmationProcess.toString() ? (
         <div>
           <ActionBTN small onClick={() => onLoanAccept()}>
-            Accept
+            Approve
           </ActionBTN>
           <ActionBTN onClick={() => onLoanReject()} small>
             Reject

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import {
   createLoanInput,
   nextOfKinInfo,
   workInformation,
 } from "./InputFieldData";
 import Preloader from "../../../../components/Preloader/index";
-import FormInput from "../../../../components/FormInput/index";
+import {
+  FormInput,
+  FormInputWithDatalist,
+} from "../../../../components/FormInput/index";
 import SelectInput from "../../../../components/SelectInput";
 import UploadInput from "../../../../components/FileUpload";
 import CreateBTN from "../../../../components/Button";
@@ -31,7 +34,7 @@ const CreateLoan: React.FC<Props> = (props) => {
       setLoading(false);
     }, 1500);
 
-    // console.log(userData);
+    console.log(userData);
   };
 
   return (
@@ -40,10 +43,26 @@ const CreateLoan: React.FC<Props> = (props) => {
         <fieldset>
           <legend>Application Form:</legend>
           <div className="three-column-grid">
-            {createLoanInput.map((item, index) =>
-              item.type === "select" ? (
+            {createLoanInput.map((item, key) =>
+              item.dataList ? (
+                <Fragment key={key}>
+                  <FormInputWithDatalist
+                    onChange={handleFormChange}
+                    list={item.name}
+                    label={item.label}
+                    dataList={item.dataList}
+                    name={item.name}
+                    key={key}
+                  />
+                  {/* <datalist id={item.name}>
+                    {item.dataList?.map((opt, key) => (
+                      <option key={key} value={opt} />
+                    ))}
+                  </datalist> */}
+                </Fragment>
+              ) : item.type === "select" ? (
                 <SelectInput
-                  key={index}
+                  key={key}
                   name={item.name}
                   label={item.label}
                   handleChange={handleFormChange}
@@ -51,7 +70,7 @@ const CreateLoan: React.FC<Props> = (props) => {
                 />
               ) : (
                 <FormInput
-                  key={index}
+                  key={key}
                   onChange={handleFormChange}
                   // type={item.type}
                   placeholder={item.placeholder}
@@ -59,14 +78,7 @@ const CreateLoan: React.FC<Props> = (props) => {
                 />
               )
             )}
-            {/* <input list="browsers" name="browser" id="browser" />
-            <datalist id="browsers">
-              <option value="Akeem" />
-              <option value="Ifeoluwa" />
-              <option value="Chrome" />
-              <option value="Opera" />
-              <option value="Safari" />
-            </datalist> */}
+
             {/* {createLoanForm} */}
           </div>
         </fieldset>
@@ -74,10 +86,10 @@ const CreateLoan: React.FC<Props> = (props) => {
           <fieldset>
             <legend>Next of Kin: </legend>
             <div className="three-column-grid">
-              {nextOfKinInfo.map((item, index) =>
+              {nextOfKinInfo.map((item, key) =>
                 item.type === "select" ? (
                   <SelectInput
-                    key={index}
+                    key={key}
                     name={item.name}
                     label={item.label}
                     handleChange={handleFormChange}
@@ -85,7 +97,7 @@ const CreateLoan: React.FC<Props> = (props) => {
                   />
                 ) : (
                   <FormInput
-                    key={index}
+                    key={key}
                     // type={item.type}
                     onChange={handleFormChange}
                     placeholder={item.placeholder}
@@ -100,12 +112,12 @@ const CreateLoan: React.FC<Props> = (props) => {
         <fieldset className="three-column-grid">
           <legend>Work Information: </legend>
           {workInformation.map(
-            (item, index) => (
+            (item, key) => (
               //  item.type === "select" ? (
-              //     <SelectInput key={index}label={item.label} optItem={item.options} />
+              //     <SelectInput key={key}label={item.label} optItem={item.options} />
               //   ) : (
               <FormInput
-                key={index}
+                key={key}
                 // type={item.type}
                 onChange={handleFormChange}
                 placeholder={item.placeholder}

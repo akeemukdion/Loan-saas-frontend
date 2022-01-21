@@ -22,7 +22,12 @@ const Card: React.FC<viewLoanProps> = ({ dummyData }) => {
                 return (
                   <CardBlock key={index2}>
                     <p>
-                      <strong>{info.key}</strong>: {info.value}
+                      <strong>{info.key}</strong>:{" "}
+                      {info.key === "Loan Amount" ? (
+                        <span> &#8358;{info.value}</span>
+                      ) : (
+                        info.value
+                      )}
                     </p>
                   </CardBlock>
                 );

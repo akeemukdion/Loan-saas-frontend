@@ -8,6 +8,7 @@ type InputItem = {
   required?: boolean;
   pattern?: string;
   options?: string[];
+  dataList?: string[];
 };
 
 export const createLoanInput: InputItem[] = [
@@ -132,7 +133,8 @@ export const createLoanInput: InputItem[] = [
     label: "Product type",
     errorMessage: "select product type ",
     required: true,
-    options: ["DEFF", "Federal", "UKD-Staff loan"],
+
+    dataList: ["DEFF", "Federal", "UKD-Staff loan"],
     //   pattern: values.password,
   },
   {
@@ -143,7 +145,7 @@ export const createLoanInput: InputItem[] = [
     label: "Loan officer",
     errorMessage: "invalid input",
     required: true,
-    options: [
+    dataList: [
       "Magdalene Itam- Masodje",
       "Chinonye Ofurum Victoria",
       "Matilda Diete-spiff",

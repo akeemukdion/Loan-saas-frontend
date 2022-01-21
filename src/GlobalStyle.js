@@ -67,7 +67,7 @@ ul {
   color: var(--Text-Body-color);
 }
 
-.three-column-grid,.two-column-grid{
+.four-column-grid,.three-column-grid,.two-column-grid{
   display: grid;
     grid-template-columns: 1fr ;
     grid-column-gap: 5px;
@@ -90,6 +90,14 @@ ul {
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 20px;
         grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: stretch;
+     }
+    .four-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
         justify-items: stretch;
         align-items: stretch;
      }

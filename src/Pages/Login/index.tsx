@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormInput from "../../components/FormInput/index";
+import { FormInput } from "../../components/FormInput/index";
 import LoginButton from "../../components/Button/index";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Form } from "./login.style";
