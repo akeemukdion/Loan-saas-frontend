@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormInput } from "../../components/FormInput/index";
 import LoginButton from "../../components/Button/index";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, Form } from "./login.style";
+import { RootState } from "../../Store/store";
 import Loader from "../../components/Preloader/index";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../../Store/actions/authAction";
+// import { loginEmployeeService } from "../../services/userServices";
+// import {State} from '../../Store/Reducers/index';
 type Loginstate = {
   email: string;
   password: string;
@@ -21,14 +25,23 @@ type Loginstate = {
 //   //   pattern:"^[A-Za-z0-9]{}"
 // }
 
-const LoginForm: () => JSX.Element = () => {
-  const [loading, setLoading] = useState(false);
+const LoginForm = () => {
+  const storeState = useSelector(
+    (state: RootState) => state.authUser["loading"]
+  );
+  const dispatch = useDispatch();
+  // const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    console.log(storeState, "sdsfsdf");
+  });
+
   const [userData, setUserData] = useState<Loginstate>({
     email: "",
     password: "",
   });
+  // console.log(user, "sdftr");
+
   const [error, setError] = useState({ message: "" });
-  let navigate = useNavigate();
   const inputsArray = [
     {
       // id: 2,
@@ -59,12 +72,14 @@ const LoginForm: () => JSX.Element = () => {
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
+    // setLoading(true);
     // console.log(userData);
     if (userData.email && userData.password) {
-      setTimeout(() => {
-        navigate("/dashboard/overview");
-      }, 2000);
+      // dispatch(loginEmployeeService(userData, setUserData, userData, navigate));
+      dispatch(getUser(userData));
+      // setTimeout(() => {
+      //   navigate("/dashboard/overview");
+      // }, 2000);
     } else {
       setError({ message: "Invalid Details" });
     }
@@ -111,12 +126,16 @@ const LoginForm: () => JSX.Element = () => {
         <div className="Forgotpassword">
           <Link to="/#">Forgot Password</Link>
         </div>
-        <LoginButton colored type="submit" disabled={loading}>
-          {loading ? <Loader /> : "Login"}
+        <LoginButton colored type="submit" disabled={storeState["loading"]}>
+          {storeState["loading"] ? <Loader /> : "Login"}
         </LoginButton>
         {/* {JSON.stringify(userData)} */}
       </Form>
     </Container>
   );
 };
+
+// const mapStateToProps = (state: RootState) => ({
+//   loading: state.authUser["loading"],
+// });
 export default LoginForm;

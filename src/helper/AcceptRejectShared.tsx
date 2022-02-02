@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ActionBTN from "../components/Button/index";
+import RejectionBTN from "./promptPage/index";
 // import { getLoginEmployee } from "../services/userServices";
 // import Swal from "sweetalert2";
 // import { fireRejectionForRepayment } from "../Modules/Funding/NewFunding/rejectionModal";
@@ -17,6 +18,7 @@ const AcceptRejectDeclineAction: React.FC<Props> = () => {
   // const [acceptanceLoading, setAcceptanceLoading] = useState(false);
 
   const loanConfirmationProcess = 1;
+
   const onLoanAccept = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -33,42 +35,6 @@ const AcceptRejectDeclineAction: React.FC<Props> = () => {
     });
   };
 
-  const onLoanReject = () => {
-    Swal.fire({
-      title: "You are about to reject!, Reason for rejection",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
-      showCancelButton: true,
-      confirmButtonText: "Reject",
-      cancelButtonColor: "#d33",
-      confirmButtonColor: "#aad630",
-      showLoaderOnConfirm: true,
-      preConfirm: (login) => {
-        return navigate(-1);
-        // return fetch(`//api.github.com/users/${login}`)
-        //   .then(response => {
-        //     if (!response.ok) {
-        //       throw new Error(response.statusText)
-        //     }
-        //     return response.json()
-        //   })
-        //   .catch(error => {
-        //     Swal.showValidationMessage(
-        //       `Request failed: ${error}`
-        //     )
-        //   })
-      },
-      allowOutsideClick: () => !Swal.isLoading(),
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: `Rejected`,
-        });
-      }
-    });
-  };
   const onLoanDecline = () => {
     Swal.fire({
       title: "You are about to Decline!, Please avail your reason",
@@ -117,9 +83,7 @@ const AcceptRejectDeclineAction: React.FC<Props> = () => {
           <ActionBTN small onClick={() => onLoanAccept()}>
             Approve
           </ActionBTN>
-          <ActionBTN onClick={() => onLoanReject()} small>
-            Reject
-          </ActionBTN>
+          <RejectionBTN />
           <ActionBTN small onClick={() => onLoanDecline()}>
             Decline
           </ActionBTN>

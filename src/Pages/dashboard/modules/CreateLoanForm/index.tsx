@@ -21,9 +21,12 @@ type Props = {};
 const CreateLoan: React.FC<Props> = (props) => {
   const [userData, setUserData] = useState<Createloanstate>({});
   const [loading, setLoading] = useState(false);
+  const [editable, setEditable] = useState(true);
+  // const [bvn, setBvn] = useState("");
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
+    console.log(userData);
   };
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -36,9 +39,33 @@ const CreateLoan: React.FC<Props> = (props) => {
 
     console.log(userData);
   };
+  const verifyBVN = () => {
+    // if (userData) {
+    setEditable(false);
+    // }
+  };
 
   return (
     <Style.Wrapper>
+      <div className="bvn_wrapper">
+        <div className="two-column-grid">
+          <FormInput
+            name="bankVerificationNumber"
+            type="number"
+            onChange={handleFormChange}
+            style={{ width: "400px", marginRight: "15px" }}
+            // label="Bank verification Number"
+            placeholder="Please provide Bank verification number "
+          />
+          <CreateBTN
+            colored
+            style={{ width: "250px" }}
+            onClick={() => verifyBVN()}
+          >
+            Verify BVN to proceed
+          </CreateBTN>
+        </div>
+      </div>
       <form onSubmit={(event) => onSubmitHandler(event)}>
         <fieldset>
           <legend>Application Form:</legend>
@@ -50,6 +77,7 @@ const CreateLoan: React.FC<Props> = (props) => {
                     onChange={handleFormChange}
                     list={item.name}
                     label={item.label}
+                    disabled={editable}
                     dataList={item.dataList}
                     name={item.name}
                     key={key}
@@ -73,6 +101,7 @@ const CreateLoan: React.FC<Props> = (props) => {
                   key={key}
                   onChange={handleFormChange}
                   // type={item.type}
+                  disabled={editable}
                   placeholder={item.placeholder}
                   {...item}
                 />
@@ -92,12 +121,14 @@ const CreateLoan: React.FC<Props> = (props) => {
                     key={key}
                     name={item.name}
                     label={item.label}
+                    disabled={editable}
                     handleChange={handleFormChange}
                     optItem={item.options}
                   />
                 ) : (
                   <FormInput
                     key={key}
+                    disabled={editable}
                     // type={item.type}
                     onChange={handleFormChange}
                     placeholder={item.placeholder}
@@ -119,6 +150,7 @@ const CreateLoan: React.FC<Props> = (props) => {
               <FormInput
                 key={key}
                 // type={item.type}
+                disabled={editable}
                 onChange={handleFormChange}
                 placeholder={item.placeholder}
                 {...item}

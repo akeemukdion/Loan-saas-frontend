@@ -17,7 +17,7 @@ const SelectInput = ({ handleChange, name, optItem, label, ...otherProps }) => {
       >
         <option>Select</option>
         {optItem?.map((s) => (
-          <option key={s} name={name} value={s}>
+          <option key={s} name={s} value={s}>
             {s}
           </option>
         ))}

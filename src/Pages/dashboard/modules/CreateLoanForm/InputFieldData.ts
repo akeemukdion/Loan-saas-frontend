@@ -107,14 +107,24 @@ export const createLoanInput: InputItem[] = [
 
   {
     // id: "8",
-    name: "BVN",
+    name: "amount",
     type: "number",
-    placeholder: "bank verification number",
-    label: "Bank verification number(BVN)",
-    errorMessage: "input valid bvn!  ",
+    placeholder: "loan amount",
+    label: "Amount",
+    errorMessage: "input amount ",
     required: true,
     //   pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd@$£!%*#?&^_-]{8,20}$",
   },
+  // {
+  //   // id: "8",
+  //   name: "BVN",
+  //   type: "number",
+  //   placeholder: "bank verification number",
+  //   label: "Bank verification number(BVN)",
+  //   errorMessage: "input valid bvn!  ",
+  //   required: true,
+  //   //   pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd@$£!%*#?&^_-]{8,20}$",
+  // },
   {
     // id: "9",
     name: "phone-number",

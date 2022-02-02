@@ -1,6 +1,6 @@
 import axios from "axios";
 import CustomHttpError from "./CustomError";
-import { getCookie } from "../shared/authHelper";
+import { getCookie } from "./AuthHelper";
 // eslint-disable-next-line
 // const cloud =  'https://ves-backend.herokuapp.com/';
 

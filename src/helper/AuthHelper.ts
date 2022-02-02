@@ -1,6 +1,6 @@
 import cookie from "js-cookie";
 // import { getLoginEmployee } from "../services/userServices";
-import CustomApi from "../helper/CustomApi";
+// import CustomApi from "../helper/CustomApi";
 
 // declare global {
 //     interface Window { MyNamespace: any; }
@@ -46,28 +46,32 @@ export const removeLocalStorage = (key: string) => {
 };
 
 interface APIresponse {
-  data: string;
-  access_token: string;
+  data: {
+    key: string;
+    value: string;
+  };
 }
 
 export const authenticate = (response: APIresponse, next: () => void) => {
-  setCookie("token", response.access_token);
-  setLocalStorage("employee", response.data);
+  setCookie("token", response.data.value);
+  setLocalStorage("employee", response.data.key);
   next();
 };
 
-// export const isAuth = () => {
-//   if ((window as any) !== "undefined") {
-//     const cookieChecked = getCookie("token");
-//     if (cookieChecked) {
-//       if (localStorage.getItem("employee")) {
-//         return JSON.parse(localStorage.getItem("employee"));
-//       } else {
-//         return false;
-//       }
-//     }
-//   }
-// };
+export const isAuth = () => {
+  if ((window as any) !== "undefined") {
+    const cookieChecked = getCookie("token");
+    if (cookieChecked) {
+      if (localStorage.getItem("employee")) {
+        let employee = "asksd";
+        // return JSON.parse(window.localStorage.getItem("employee"));
+        return employee;
+      } else {
+        return false;
+      }
+    }
+  }
+};
 
 // export const signout = (next:()=>void) => {
 //   removeCookie("token");

@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   /* section{ */
   /* padding-top: 60px; */
+  .bvn_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   fieldset {
     padding: 35px;
     margin-top: 50px;
