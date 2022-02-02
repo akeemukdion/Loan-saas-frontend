@@ -1,7 +1,7 @@
-import  { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Avenir Next:wght@300;400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Avenir Next:wght@300;400;700&display=swap"); */
 
 /* Global Styles */
 :root {
@@ -62,7 +62,12 @@ ul {
   margin: 0;
 }
 
-.three-column-grid,.two-column-grid{
+.size-lg{
+  font-size: 20px;
+  color: var(--Text-Body-color);
+}
+
+.four-column-grid,.three-column-grid,.two-column-grid{
   display: grid;
     grid-template-columns: 1fr ;
     grid-column-gap: 5px;
@@ -88,5 +93,17 @@ ul {
         justify-items: stretch;
         align-items: stretch;
      }
+    .four-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+        justify-items: stretch;
+        align-items: stretch;
+     }
+     .size-lg{
+      font-size: 40px;
+      color: var(--Text-Body-color)
+    }
  }
-`
+`;

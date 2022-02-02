@@ -1,5 +1,5 @@
 import React from "react";
-import FormInput from "../../../../components/FormInput/index";
+import { FormInput } from "../../../../components/FormInput/index";
 import UserCallToAction from "./component/Dropdown/dropdown";
 import * as Style from "./navbar.style";
 

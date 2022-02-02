@@ -58,6 +58,7 @@ export const Dropdowncontent = styled.div<IProps>`
     font-size: 16px;
     line-height: 146.7%;
     color: #000;
+    cursor: pointer;
     display: block;
     &:hover {
       background-color: #ddd;

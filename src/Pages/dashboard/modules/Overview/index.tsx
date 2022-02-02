@@ -1,22 +1,36 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+// import React from "react";
+import { Link } from "react-router-dom";
 import OverviewCard from "./Card";
-import { getLoansOverview } from "./dummyData";
-import * as Stlyed from "./overview.style";
+import { breakdownOverview, getLoansOverview } from "./dummyData";
+import * as Styled from "./overview.style";
+import DisbursedLoan from "./Piechart";
 
 const DashboardOverview = () => {
   return (
     <>
-      <Stlyed.Wrapper>
-        <div className="three-column-grid">
+      <Styled.Wrapper>
+        <Styled.BreakdownWrapper>
+          <div className="three-column-grid">
+            {breakdownOverview.map((data, idx) => (
+              <OverviewCard key={idx} item={data} />
+            ))}
+          </div>
+          <div>
+            {/* <p>#8058;</p> */}
+            <DisbursedLoan />
+            <p>Total Disbursed loans</p>
+          </div>
+        </Styled.BreakdownWrapper>
+
+        <div className="four-column-grid">
           {getLoansOverview.map((data, idx) => (
             <Link key={idx} to={data.title.replace(/\s/g, "")}>
               <OverviewCard item={data} />
             </Link>
           ))}
         </div>
-      </Stlyed.Wrapper>
-      <Outlet />
+      </Styled.Wrapper>
+      {/* <Outlet /> */}
     </>
   );
 };

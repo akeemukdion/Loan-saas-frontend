@@ -1,21 +1,22 @@
 .select {
-    width: 100%;
-    padding: 14px;
-    /* margin: 8px 0; */
-    display: inline-block;
-    border-radius: 8px;
-    border: 1px solid  #ccc;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  padding: 14px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border-radius: 8px;
+  color: gray;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
-  .selectLabel {
-    display: block;
-    font-weight: bold;
-    padding: 6px 0;
-    font-size: 14px;
-    color: gray;
-  }
-  /* .select:focus::placeholder {
+.selectLabel {
+  display: block;
+  font-weight: bold;
+  padding: 6px 0;
+  font-size: 14px;
+  color: gray;
+}
+/* .select:focus::placeholder {
     opacity: 0.2;
     font-size: 12px;
   }
