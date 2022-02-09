@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import NavBar from "./components/Navigationbar/index";
-import CreateLoanForm from "./modules/CreateLoanForm";
+import CreateCustomer from "./modules/createCustomer/index";
 import Preloader from "../../components/Preloader/index";
 import SideBarNav from "./components/sidebar";
 import * as Style from "./dashboard.style";
@@ -35,7 +35,7 @@ const Dashboard: React.FC<Props> = (props) => {
         <div className="mainView">
           <Suspense fallback={<Preloader />}>
             <Routes>
-              <Route path="/create-loan" element={<CreateLoanForm />} />
+              <Route path="/create-loan" element={<CreateCustomer />} />
               <Route path="/view-loan/*" element={<ViewLoan />} />
               <Route path="/overview" element={<DashboardOverview />} />
               <Route path="/loan-status" element={<LoanStatus />} />

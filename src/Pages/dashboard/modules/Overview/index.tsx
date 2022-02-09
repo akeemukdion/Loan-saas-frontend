@@ -15,11 +15,10 @@ const DashboardOverview = () => {
               <OverviewCard key={idx} item={data} />
             ))}
           </div>
-          <div>
-            {/* <p>#8058;</p> */}
+          {/* <div>
             <DisbursedLoan />
             <p>Total Disbursed loans</p>
-          </div>
+          </div> */}
         </Styled.BreakdownWrapper>
 
         <div className="four-column-grid">

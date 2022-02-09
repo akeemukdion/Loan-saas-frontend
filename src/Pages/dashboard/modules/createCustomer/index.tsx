@@ -70,7 +70,7 @@ const CreateLoan: React.FC<Props> = (props) => {
         <fieldset>
           <legend>Application Form:</legend>
           <div className="three-column-grid">
-            {createLoanInput.map((item, key) =>
+            {createLoanInput.map((item: any, key: number) =>
               item.dataList ? (
                 <Fragment key={key}>
                   <FormInputWithDatalist
@@ -115,7 +115,7 @@ const CreateLoan: React.FC<Props> = (props) => {
           <fieldset>
             <legend>Next of Kin: </legend>
             <div className="three-column-grid">
-              {nextOfKinInfo.map((item, key) =>
+              {nextOfKinInfo.map((item: any, key: number) =>
                 item.type === "select" ? (
                   <SelectInput
                     key={key}
@@ -143,7 +143,7 @@ const CreateLoan: React.FC<Props> = (props) => {
         <fieldset className="three-column-grid">
           <legend>Work Information: </legend>
           {workInformation.map(
-            (item, key) => (
+            (item: any, key: number) => (
               //  item.type === "select" ? (
               //     <SelectInput key={key}label={item.label} optItem={item.options} />
               //   ) : (
