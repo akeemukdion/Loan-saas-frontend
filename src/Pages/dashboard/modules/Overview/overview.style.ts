@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 `;
 export const BreakdownWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
 `;

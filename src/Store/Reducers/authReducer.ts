@@ -12,14 +12,17 @@ import {
 // }
 
 interface DefaultState {
-  loading: boolean;
-  data?: {
-    token: string;
-    name: string;
-    id: string;
-    level: number;
-  };
+  [key: string]: any;
 }
+// interface DefaultState {
+//   loading: boolean;
+//   data?: {
+//     token: string;
+//     name: string;
+//     id: string;
+//     level: number;
+//   };
+// }
 
 const initialState: DefaultState = {
   loading: false,

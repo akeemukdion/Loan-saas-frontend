@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormInput } from "../../components/FormInput/index";
 import LoginButton from "../../components/Button/index";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Container, Form } from "./login.style";
 import { RootState } from "../../Store/store";
 import Loader from "../../components/Preloader/index";
@@ -14,56 +14,51 @@ type Loginstate = {
   password: string;
 };
 
-// type Fieldarray={
-//   id: number;
-//   name: string;
-//   type: string;
-//   placeholder:string;
-//   label: string;
-//   errorMessage: string;
-//   required: boolean;
-//   //   pattern:"^[A-Za-z0-9]{}"
-// }
+const inputsArray = [
+  {
+    // id: 2,
+    name: "email",
+    type: "email",
+    placeholder: "Enter email",
+    label: "Email",
+    errorMessage: "it should be valid email address",
+    required: true,
+    //   pattern:"^[A-Za-z0-9]{}"
+  },
+  {
+    // id: 3,
+    name: "password",
+    type: "password",
+    placeholder: "Enter Password",
+    label: "Password",
+    errorMessage: "Input your password  ",
+    required: true,
+    //   pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd@$£!%*#?&^_-]{8,20}$",
+  },
+];
 
 const LoginForm = () => {
   const storeState = useSelector(
     (state: RootState) => state.authUser["loading"]
   );
   const dispatch = useDispatch();
+
   // const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    console.log(storeState, "sdsfsdf");
-  });
 
   const [userData, setUserData] = useState<Loginstate>({
     email: "",
     password: "",
   });
   // console.log(user, "sdftr");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function redirectOnSuccess() {
+    const redirectPath = location.state?.path || "/dashboard/overview";
+    navigate(redirectPath, { replace: true });
+  }
 
   const [error, setError] = useState({ message: "" });
-  const inputsArray = [
-    {
-      // id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Enter email",
-      label: "Email",
-      errorMessage: "it should be valid email address",
-      required: true,
-      //   pattern:"^[A-Za-z0-9]{}"
-    },
-    {
-      // id: 3,
-      name: "password",
-      type: "password",
-      placeholder: "Enter Password",
-      label: "Password",
-      errorMessage: "Input your password  ",
-      required: true,
-      //   pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd@$£!%*#?&^_-]{8,20}$",
-    },
-  ];
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -72,29 +67,13 @@ const LoginForm = () => {
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // setLoading(true);
-    // console.log(userData);
     if (userData.email && userData.password) {
       // dispatch(loginEmployeeService(userData, setUserData, userData, navigate));
-      dispatch(getUser(userData));
-      // setTimeout(() => {
-      //   navigate("/dashboard/overview");
-      // }, 2000);
+      dispatch(getUser(userData, redirectOnSuccess));
     } else {
       setError({ message: "Invalid Details" });
     }
   };
-  // const onSubmitHandlers = (
-  //   e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  // ) => {
-  //   e.preventDefault();
-  //   // console.log(userData);
-  //   if (userData.email && userData.password) {
-  //     navigate("/dashboard/overview");
-  //   } else {
-  //     setError({ message: "Invalid Details" });
-  //   }
-  // };
 
   return (
     <Container>

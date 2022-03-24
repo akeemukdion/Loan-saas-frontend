@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import OverviewCard from "./Card";
 import { breakdownOverview, getLoansOverview } from "./dummyData";
 import * as Styled from "./overview.style";
-import DisbursedLoan from "./Piechart";
+// import DisbursedLoan from "./Piechart";
 
 const DashboardOverview = () => {
   return (
@@ -15,11 +15,10 @@ const DashboardOverview = () => {
               <OverviewCard key={idx} item={data} />
             ))}
           </div>
-          <div>
-            {/* <p>#8058;</p> */}
+          {/* <div>
             <DisbursedLoan />
             <p>Total Disbursed loans</p>
-          </div>
+          </div> */}
         </Styled.BreakdownWrapper>
 
         <div className="four-column-grid">

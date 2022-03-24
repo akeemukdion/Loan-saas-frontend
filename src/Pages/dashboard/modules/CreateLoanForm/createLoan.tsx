@@ -1,9 +1,5 @@
 import React, { Fragment, useState } from "react";
-import {
-  createLoanInput,
-  nextOfKinInfo,
-  workInformation,
-} from "./InputFieldData";
+import { createLoanInput } from "./inputFieldData";
 import Preloader from "../../../../components/Preloader/index";
 import {
   FormInput,
@@ -12,42 +8,51 @@ import {
 import SelectInput from "../../../../components/SelectInput";
 import UploadInput from "../../../../components/FileUpload";
 import CreateBTN from "../../../../components/Button";
-import * as Style from "./create.style";
+import * as Style from "./loanform.style";
 import Swal from "sweetalert2";
 
 type Createloanstate = {};
 
 type Props = {};
-const CreateLoan: React.FC<Props> = (props) => {
-  const [userData, setUserData] = useState<Createloanstate>({});
+const LoanForm: React.FC<Props> = (props) => {
+  const [userData, setUserData] = useState<Createloanstate>({
+    Tenure: "",
+    LoanProductCode: "",
+    CustomerID: "",
+    LinkedAccountNumber: "",
+    Moratorium: "",
+    InterestAccrualCommencementDate: "",
+    Amount: "",
+    InterestRate: "",
+    PrincipalPaymentFrequency: "",
+  });
   const [loading, setLoading] = useState(false);
-  const [editable, setEditable] = useState(true);
   // const [bvn, setBvn] = useState("");
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
-    console.log(userData);
+    // console.log(userData);
   };
 
-  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+  // const handleReset = () => {
+  //   Array.from(document.querySelectorAll("input")).forEach(
+  //     (input) => (input.value = "")
+  //   );
+  //   console.log("emi ni", userData);
+  // };
+
+  const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      Swal.fire("Loan created!");
+      Swal.fire("Loan Application submitted!");
       setLoading(false);
     }, 1500);
-
-    console.log(userData);
-  };
-  const verifyBVN = () => {
-    // if (userData) {
-    setEditable(false);
-    // }
   };
 
   return (
     <Style.Wrapper>
-      <div className="bvn_wrapper">
+      {/* <div className="bvn_wrapper">
         <div className="two-column-grid">
           <FormInput
             name="bankVerificationNumber"
@@ -65,19 +70,18 @@ const CreateLoan: React.FC<Props> = (props) => {
             Verify BVN to proceed
           </CreateBTN>
         </div>
-      </div>
+      </div> */}
       <form onSubmit={(event) => onSubmitHandler(event)}>
         <fieldset>
           <legend>Application Form:</legend>
           <div className="three-column-grid">
-            {createLoanInput.map((item, key) =>
+            {createLoanInput.map((item: any, key: number) =>
               item.dataList ? (
                 <Fragment key={key}>
                   <FormInputWithDatalist
                     onChange={handleFormChange}
                     list={item.name}
                     label={item.label}
-                    disabled={editable}
                     dataList={item.dataList}
                     name={item.name}
                     key={key}
@@ -101,65 +105,15 @@ const CreateLoan: React.FC<Props> = (props) => {
                   key={key}
                   onChange={handleFormChange}
                   // type={item.type}
-                  disabled={editable}
                   placeholder={item.placeholder}
                   {...item}
                 />
               )
             )}
 
-            {/* {createLoanForm} */}
+            {/* {LoanForm} */}
           </div>
         </fieldset>
-        <section>
-          <fieldset>
-            <legend>Next of Kin: </legend>
-            <div className="three-column-grid">
-              {nextOfKinInfo.map((item, key) =>
-                item.type === "select" ? (
-                  <SelectInput
-                    key={key}
-                    name={item.name}
-                    label={item.label}
-                    disabled={editable}
-                    handleChange={handleFormChange}
-                    optItem={item.options}
-                  />
-                ) : (
-                  <FormInput
-                    key={key}
-                    disabled={editable}
-                    // type={item.type}
-                    onChange={handleFormChange}
-                    placeholder={item.placeholder}
-                    {...item}
-                  />
-                )
-              )}
-            </div>
-          </fieldset>
-        </section>
-
-        <fieldset className="three-column-grid">
-          <legend>Work Information: </legend>
-          {workInformation.map(
-            (item, key) => (
-              //  item.type === "select" ? (
-              //     <SelectInput key={key}label={item.label} optItem={item.options} />
-              //   ) : (
-              <FormInput
-                key={key}
-                // type={item.type}
-                disabled={editable}
-                onChange={handleFormChange}
-                placeholder={item.placeholder}
-                {...item}
-              />
-            )
-            // )
-          )}
-        </fieldset>
-
         <section>
           <fieldset>
             <legend>Upload Relevant Documents:</legend>
@@ -180,6 +134,4 @@ const CreateLoan: React.FC<Props> = (props) => {
   );
 };
 
-// CreateLoan.propTypes = {};
-
-export default CreateLoan;
+export default LoanForm;

@@ -23,21 +23,18 @@ export const logoutEmployee = async (data: {}) => {
 };
 
 export const getUser =
-  (data: userPayload) => async (dispatch: Dispatch<userDispatchTypes>) => {
-    console.log(data);
-    // if (Cookies.get("accessToken" || token)) {
-    //   setAuthToken(Cookies.get("accessToken"));
-    // }
+  (data: userPayload, callbackFN: () => void) =>
+  async (dispatch: Dispatch<userDispatchTypes>) => {
     dispatch({ type: SET_LOADING });
     try {
-      //   setLoading();
-
       //   await CustomApi.get("sanctum/csrf-cookie");
       const response = await CustomApi.post("api/user/login", data);
+      // window.localStorage.setItem("user", response.data.body);
       dispatch({ type: GET_USER, payload: response.data.body });
+      // callbackFN();
     } catch (err) {
       dispatch({ type: AUTH_FAIL });
-      //   dispatch({ type: SET_LOADING });
-      // console.log({ type: AUTH_ERROR });
+      callbackFN();
+      window.localStorage.setItem("user", "data");
     }
   };
