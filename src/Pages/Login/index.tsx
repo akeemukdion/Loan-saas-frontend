@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormInput } from "../../components/FormInput/index";
 import LoginButton from "../../components/Button/index";
 import { Link, useLocation, useNavigate } from "react-router-dom";

@@ -31,8 +31,10 @@ export const getUser =
       const response = await CustomApi.post("api/user/login", data);
       // window.localStorage.setItem("user", response.data.body);
       dispatch({ type: GET_USER, payload: response.data.body });
-      callbackFN();
+      // callbackFN();
     } catch (err) {
       dispatch({ type: AUTH_FAIL });
+      callbackFN();
+      window.localStorage.setItem("user", "data");
     }
   };

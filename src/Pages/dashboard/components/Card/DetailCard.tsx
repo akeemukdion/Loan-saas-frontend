@@ -15,7 +15,7 @@ type loanItemProps = {
 //     item:loanItem
 // }
 
-const DetailCard: React.FC<loanItemProps> = ({ item }) => {
+const DetailCard = ({ item }: loanItemProps) => {
   return (
     <CardWrapper>
       <div>

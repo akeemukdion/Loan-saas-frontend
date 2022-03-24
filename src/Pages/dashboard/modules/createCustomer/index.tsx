@@ -14,6 +14,7 @@ import UploadInput from "../../../../components/FileUpload";
 import CreateBTN from "../../../../components/Button";
 import * as Style from "./create.style";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 type Createloanstate = {};
 
@@ -23,21 +24,22 @@ const CreateLoan: React.FC<Props> = (props) => {
   const [loading, setLoading] = useState(false);
   const [editable, setEditable] = useState(true);
   // const [bvn, setBvn] = useState("");
-
+  const navigate = useNavigate();
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
-    console.log(userData);
+    // console.log(userData);
   };
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      Swal.fire("Loan created!");
+      Swal.fire("Customer created!");
+      navigate("/dashboard/create-loan", { replace: true });
       setLoading(false);
     }, 1500);
 
-    console.log(userData);
+    // console.log(userData);
   };
   const verifyBVN = () => {
     // if (userData) {
@@ -68,7 +70,7 @@ const CreateLoan: React.FC<Props> = (props) => {
       </div>
       <form onSubmit={(event) => onSubmitHandler(event)}>
         <fieldset>
-          <legend>Application Form:</legend>
+          <legend>Create customer Form:</legend>
           <div className="three-column-grid">
             {createLoanInput.map((item: any, key: number) =>
               item.dataList ? (

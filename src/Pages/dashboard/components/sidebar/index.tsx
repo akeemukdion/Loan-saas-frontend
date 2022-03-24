@@ -7,7 +7,7 @@ type Props = {
   isOpen: boolean;
 };
 
-const SideBarNav: React.FC<Props> = ({ isOpen }) => {
+const SideBarNav = ({ isOpen }: Props) => {
   // console.log(isOpen);
   return (
     <Wrapper showSideBar={isOpen}>

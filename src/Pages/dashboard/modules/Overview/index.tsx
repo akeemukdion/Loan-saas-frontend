@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import OverviewCard from "./Card";
 import { breakdownOverview, getLoansOverview } from "./dummyData";
 import * as Styled from "./overview.style";
-import DisbursedLoan from "./Piechart";
+// import DisbursedLoan from "./Piechart";
 
 const DashboardOverview = () => {
   return (
